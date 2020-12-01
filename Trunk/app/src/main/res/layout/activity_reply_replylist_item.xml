@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginVertical="15dp"
+        android:paddingHorizontal="20dp"
+        android:background="@drawable/white_bg_circle_shape"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+        <!--匹配内容-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/patternContent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/patternModeLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="匹配模式"
+                android:textSize="20sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:id="@+id/patternModeText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:text="aswerfawsfgasdfa"
+                android:textSize="20sp"
+                android:textColor="#000000"
+                android:singleLine="true"
+                android:ellipsize="end"
+                app:layout_constraintLeft_toRightOf="@id/patternModeLabel"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/patternModeLabel"/>
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/patternModeBarrier"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:barrierDirection="bottom"
+                app:constraint_referenced_ids="patternModeLabel, patternModeText"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/patternMsgCLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/patternModeBarrier">
+
+                <TextView
+                    android:id="@+id/patternMsgLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="匹配内容"
+                    android:textSize="20sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <TextView
+                    android:id="@+id/patternMsgText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:text="aswerfawsfgasdfa"
+                    android:textSize="20sp"
+                    android:textColor="#000000"
+                    android:singleLine="true"
+                    android:ellipsize="end"
+                    app:layout_constraintLeft_toRightOf="@id/patternMsgLabel"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/patternMsgLabel"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <!--回复内容-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/replyContent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/patternContent">
+
+            <TextView
+                android:id="@+id/replyModeLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="回复模式"
+                android:textSize="20sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:id="@+id/replyModeText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:text="aswerfawsfgasdfa"
+                android:textSize="20sp"
+                android:textColor="#000000"
+                android:singleLine="true"
+                android:ellipsize="end"
+                app:layout_constraintLeft_toRightOf="@id/replyModeLabel"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/replyModeLabel"/>
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/replyModeBarrier"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:barrierDirection="bottom"
+                app:constraint_referenced_ids="replyModeLabel, replyModeText"/>
+            <!--固定文本内容-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/replyMsgCLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/replyModeBarrier">
+
+                <TextView
+                    android:id="@+id/replyMsgLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="回复内容"
+                    android:textSize="20sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <TextView
+                    android:id="@+id/replyMsgText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:text="aswerfawsfgasdfa"
+                    android:textSize="20sp"
+                    android:textColor="#000000"
+                    android:singleLine="true"
+                    android:ellipsize="end"
+                    app:layout_constraintLeft_toRightOf="@id/replyMsgLabel"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/replyMsgLabel"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <!--表情图片内容-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/emojiCLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/replyModeBarrier">
+
+                <TextView
+                    android:id="@+id/emojiLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="表情链接"
+                    android:textSize="20sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <TextView
+                    android:id="@+id/emojiUrlText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:text="aswerfawsfgasdfa"
+                    android:textSize="20sp"
+                    android:textColor="#000000"
+                    android:singleLine="true"
+                    android:ellipsize="end"
+                    app:layout_constraintLeft_toRightOf="@id/emojiLabel"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/emojiLabel"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <!--远程接口内容-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/serverApiCLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/replyModeBarrier">
+
+                <TextView
+                    android:id="@+id/serverApiLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="接口地址"
+                    android:textSize="20sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <TextView
+                    android:id="@+id/serverApiText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:text="aswerfawsfgasdfa"
+                    android:textSize="20sp"
+                    android:textColor="#000000"
+                    android:singleLine="true"
+                    android:ellipsize="end"
+                    app:layout_constraintLeft_toRightOf="@id/serverApiLabel"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/serverApiLabel"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <!--分割线-->
+        <ImageView
+            android:id="@+id/divider"
+            android:layout_width="0dp"
+            android:layout_height="1px"
+            android:layout_marginTop="15dp"
+            android:background="#cccccc"
+            app:layout_constraintTop_toBottomOf="@id/replyContent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"/>
+        <!--底部操作-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingVertical="20dp"
+            android:paddingHorizontal="20dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/divider">
+
+            <!--开关-->
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/itemSwitch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:switchMinWidth="50dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/editBtn"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"/>
+            <!--编辑按钮-->
+            <ImageButton
+                android:id="@+id/editBtn"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:background="@drawable/icon_edit1"
+                app:layout_constraintLeft_toRightOf="@id/itemSwitch"
+                app:layout_constraintRight_toLeftOf="@id/deleteBtn"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent" />
+            <!--删除按钮-->
+            <ImageButton
+                android:id="@+id/deleteBtn"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:background="@drawable/icon_delete"
+                app:layout_constraintLeft_toRightOf="@id/editBtn"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.fmodule">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".GlobalSendActivity"></activity>
+        <activity android:name=".AboutActivity" />
+        <activity android:name=".VoiceLenActivity" />
+        <activity android:name=".DiceActivity" />
+        <activity android:name=".SendSettingsActivity" />
+        <activity android:name=".SendActivity" />
+        <activity android:name=".GlobalReplyActivity" />
+        <activity android:name=".ContactProfileActivity" />
+        <activity android:name=".ContactsSearchActivity" />
+        <activity android:name=".ContactsActivity" />
+        <activity android:name=".ReplySettingsActivity" />
+        <activity android:name=".ReplyActivity" />
+
+        <meta-data
+            android:name="xposedmodule"
+            android:value="true" />
+        <meta-data
+            android:name="xposeddescription"
+            android:value="FModule" />
+        <meta-data
+            android:name="xposedminversion"
+            android:value="54" />
+
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service android:name=".MService" />
+    </application>
+
+</manifest>

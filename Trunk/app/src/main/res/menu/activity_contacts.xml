@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/search"
+        android:orderInCategory="1"
+        android:title="搜索"
+        android:icon="@drawable/icon_search"
+        app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/globalSend"
+        android:orderInCategory="2"
+        android:title="多选发送"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/globalReply"
+        android:orderInCategory="3"
+        android:title="全局回复"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/globalDice"
+        android:orderInCategory="4"
+        android:title="骰子点数"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/voiceLen"
+        android:orderInCategory="5"
+        android:title="语音秒数"
+        app:showAsAction="never"/>
+</menu>

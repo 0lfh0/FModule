@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">FModule</string>
+    <string name="str_copyright">by lifanghui 2020/10/1</string>
+    <string name="app_description">
+        \n
+        · 模块需要依赖Xposed框架\n
+        · 模块拥有定时发消息、自动回复等等多种有趣功能\n
+        · 注意需要先启动模块再启动微信\n
+        · 如果微信已经启动可以先重启一下手机再尝试\n
+        · 作者后续也会开发更多新的玩法哦！\n
+        · 模块只作学习用途\n
+        · 问题反馈/合作/教学 都可以来找我\n
+        · 邮箱：329605337@qq.com\n
+    </string>
+</resources>

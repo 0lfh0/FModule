@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    tools:context=".SendSettingsActivity">
+    <!--选择联系人-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/selectContactsCLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <TextView
+            android:id="@+id/selectContactsText"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginLeft="15dp"
+            android:paddingLeft="15dp"
+            android:text="已选择0位联系人"
+            android:textSize="20sp"
+            android:gravity="fill_vertical"
+            android:background="@drawable/activity_send_settings_select_contacts_text_shape"
+            app:layout_constraintTop_toTopOf="@id/selectContactsBtn"
+            app:layout_constraintBottom_toBottomOf="@id/selectContactsBtn"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/selectContactsBtn"/>
+
+        <Button
+            android:id="@+id/selectContactsBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:text="选择"
+            android:textColor="#ffffff"
+            android:textSize="20sp"
+            android:background="@drawable/activity_send_settings_select_contacts_btn_shape"
+            app:layout_constraintLeft_toRightOf="@id/selectContactsText"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--设置发送内容-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/sendContent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@id/selectContactsCLayout"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <TextView
+            android:id="@+id/sendModeLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="发送内容"
+            android:textSize="20sp"
+            app:layout_constraintTop_toTopOf="@id/sendModeSpinnerLLayout"
+            app:layout_constraintBottom_toBottomOf="@id/sendModeSpinnerLLayout"
+            app:layout_constraintLeft_toLeftOf="parent"/>
+
+        <LinearLayout
+            android:id="@+id/sendModeSpinnerLLayout"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginHorizontal="20dp"
+            android:background="@drawable/ghost_white_bg_shape"
+            app:layout_constraintLeft_toRightOf="@id/sendModeLabel"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <Spinner
+                android:id="@+id/sendModeSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginRight="20dp"/>
+
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/sendModeBarrier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="bottom"
+            app:constraint_referenced_ids="sendModeLabel, sendModeSpinnerLLayout"/>
+        <!--发送文本-->
+        <LinearLayout
+            android:id="@+id/sendMsgLLayout"
+            android:layout_width="0dp"
+            android:layout_height="200dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginVertical="10dp"
+            android:padding="10dp"
+            android:background="@drawable/ghost_white_bg_shape"
+            android:visibility="visible"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/sendModeBarrier">
+
+            <EditText
+                android:id="@+id/sendMsgEdit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:hint="请输入"/>
+
+        </LinearLayout>
+        <!--表情地址输入框-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/emojiCLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/sendModeBarrier">
+
+            <TextView
+                android:id="@+id/emojiLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="请输入表情图片链接"
+                android:textSize="20sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/emojiLLayout"/>
+
+            <LinearLayout
+                android:id="@+id/emojiLLayout"
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="10dp"
+                android:padding="10dp"
+                android:background="@drawable/ghost_white_bg_shape"
+                android:visibility="visible"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/emojiLabel">
+
+                <EditText
+                    android:id="@+id/emojiUrlEdit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:hint="请输入"/>
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <!--远程接口-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/serverApiCLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/sendModeBarrier">
+
+            <TextView
+                android:id="@+id/serverApiLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="请输入接口地址(将采用Post请求)"
+                android:textSize="20sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/serverApiLLayout"/>
+
+            <LinearLayout
+                android:id="@+id/serverApiLLayout"
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="10dp"
+                android:padding="10dp"
+                android:background="@drawable/ghost_white_bg_shape"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/serverApiLabel">
+
+                <EditText
+                    android:id="@+id/serverApiEdit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:hint="参数格式，百度 “FModule模块远程接口”"/>
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--设置发送时间-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/sendTimeContent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@id/sendContent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <TextView
+            android:id="@+id/sendTimeModeLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="发送时间"
+            android:textSize="20sp"
+            app:layout_constraintTop_toTopOf="@id/sendTimeModeSpinnerLLayout"
+            app:layout_constraintBottom_toBottomOf="@id/sendTimeModeSpinnerLLayout"
+            app:layout_constraintLeft_toLeftOf="parent"/>
+
+        <LinearLayout
+            android:id="@+id/sendTimeModeSpinnerLLayout"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginHorizontal="20dp"
+            android:background="@drawable/ghost_white_bg_shape"
+            app:layout_constraintLeft_toRightOf="@id/sendTimeModeLabel"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <Spinner
+                android:id="@+id/sendTimeModeSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginRight="20dp"/>
+
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/sendTimeModeBarrier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="bottom"
+            app:constraint_referenced_ids="sendTimeModeLabel, sendTimeModeSpinnerLLayout"/>
+
+        <TextView
+            android:id="@+id/sendTimeText"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginVertical="10dp"
+            android:paddingHorizontal="10dp"
+            android:background="@drawable/ghost_white_bg_shape"
+            android:hint="请选择时间"
+            android:textSize="20sp"
+            android:gravity="center_vertical|left"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/sendTimeModeBarrier"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--跟随发送-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/sendChildrenCLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/sendTimeContent"
+        app:layout_constraintBottom_toTopOf="@id/saveBtn"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <TextView
+            android:id="@+id/sendChildrenLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="跟随发送"
+            android:textSize="20sp"
+            android:gravity="center_vertical"
+            app:layout_constraintTop_toTopOf="@id/addSendChildBtn"
+            app:layout_constraintBottom_toBottomOf="@id/addSendChildBtn"
+            app:layout_constraintLeft_toLeftOf="parent"/>
+
+        <ImageButton
+            android:id="@+id/addSendChildBtn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/icon_add_primary"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toRightOf="parent"/>
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/sendChildrenLabelBarrier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="bottom"
+            app:constraint_referenced_ids="sendChildrenLabel, addSendChildBtn"/>
+
+        <ListView
+            android:id="@+id/sendChildrenListView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="20dp"
+            android:background="@drawable/ghost_white_bg_shape"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/sendChildrenLabelBarrier"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--保存按钮-->
+    <Button
+        android:id="@+id/saveBtn"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginVertical="30dp"
+        android:text="保存"
+        android:textColor="#ffffff"
+        android:textSize="22sp"
+        android:background="@drawable/primary_bg_circle_shape"
+        app:layout_constraintTop_toBottomOf="@id/sendTimeContent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
